@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>I'm So Sorry, My Akhu ❤️ | For My Sweet Little Bun Bun</title>
+  
+  <!-- Google Fonts: Romantic & Cute Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Music: Samjhawan (Lofi Flip) -->
+  <audio id="bg-music" src="Samjhawan (Lofi Flip).mp3" loop preload="auto"></audio>
+
+  <!-- Ambient Floating Background Elements -->
+  <div class="ambient-background" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+    <div class="floating-hearts-bg" id="floating-hearts-bg"></div>
+    <div class="clouds-bg">
+      <span class="cloud c1">☁️</span>
+      <span class="cloud c2">☁️</span>
+      <span class="cloud c3">☁️</span>
+    </div>
+  </div>
+
+  <!-- Interactive Canvas for Sparkles, Fairy Dust Trail & Automatic Heart Shower -->
+  <canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+  <!-- Top Floating Controls (Music Toggle, Auto-Play) - No Dots per request -->
+  <header class="top-bar">
+    <button id="btn-music" class="pill-btn music-btn" title="Toggle Samjhawan (Lofi Flip)">
+      <span class="music-icon" id="music-icon">🎵</span>
+      <span class="music-text" id="music-text">Song: Samjhawan (Lofi)</span>
+    </button>
+
+    <button id="btn-autoplay" class="pill-btn play-btn" title="Auto-Play Story Card">
+      <span id="play-icon">▶</span>
+      <span id="play-text">Auto Play</span>
+    </button>
+  </header>
+
+  <!-- Surprise Pop-out Character (Pops out suddenly with cute messages) -->
+  <div class="surprise-popout" id="surprise-popout" aria-hidden="true">
+    <div class="popout-speech" id="popout-speech">
+      <span id="popout-text">Pwease listen to him! 🥺</span>
+    </div>
+    <div class="popout-avatar-wrap">
+      <img src="assets/gifs/cute-adorable.gif" alt="Surprise cute character" class="popout-gif" id="popout-gif">
+    </div>
+  </div>
+
+  <!-- Floating Cute Corner Stickers -->
+  <div class="corner-doodle doodle-tl" aria-hidden="true">
+    <span class="sticker-emoji bounce-slow">🐰</span>
+    <span class="sticker-sparkle">✨</span>
+  </div>
+  <div class="corner-doodle doodle-tr" aria-hidden="true">
+    <span class="sticker-emoji pulse-slow">🧁</span>
+  </div>
+  <div class="corner-doodle doodle-bl" aria-hidden="true">
+    <span class="sticker-emoji wobble-slow">🌸</span>
+  </div>
+  <div class="corner-doodle doodle-br" aria-hidden="true">
+    <span class="sticker-emoji float-slow">💖</span>
+  </div>
+
+  <!-- Main Card Stage (Strictly Fits in Single Screen, No Scroll) -->
+  <main class="card-stage" id="card-stage">
+    <div class="sorry-card" id="sorry-card">
+      
+      <!-- ================= SCENE 1: THE DOORSTEP & INITIAL BUTTON ================= -->
+      <section class="card-scene active" id="scene-0" data-scene="0">
+        <div class="scene-pill">
+          <span class="pill-dot"></span>
+          <span>A Special Love Card for Akhu 💌</span>
+        </div>
+
+        <div class="character-wrapper">
+          <div class="gif-container heart-pulse">
+            <img src="assets/gifs/propose_bubu.gif" alt="Cute pleading character" class="character-gif" id="intro-gif">
+            <span class="flying-mini-heart">💕</span>
+            <span class="flying-mini-heart h2">✨</span>
+          </div>
+        </div>
+
+        <div class="text-content">
+          <h1 class="card-title">Hey Akhu... 🥺</h1>
+          <p class="card-subtitle">My sweet little bun bun, my sugar puff 🧁</p>
+          <p class="card-intro-note">
+            I know I hurt you and made your heart heavy today. Before you turn away, please give your idiot just one minute to speak from the bottom of my heart...
+          </p>
+        </div>
+
+        <!-- The exact button requested by the user -->
+        <div class="action-area">
+          <button class="btn-primary hear-me-btn" id="btn-hear-me">
+            <span class="sparkle-anim">✨</span>
+            <span class="btn-text">Please hear me out once 🥺👉👈</span>
+            <span class="sparkle-anim">✨</span>
+          </button>
+          <div class="tap-hint">
+            <span class="hint-hand">👆</span> Tap here to open my heart & play music 🎶
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 2: THE APOLOGY & SCOLDING REGRET ================= -->
+      <section class="card-scene" id="scene-1" data-scene="1">
+        <div class="scene-pill">
+          <span class="pill-dot"></span>
+          <span>Chapter 1 • From My Heart 💔➔❤️</span>
+        </div>
+
+        <!-- Larger, Immersive Polaroid Memory -->
+        <div class="hero-photo-wrapper">
+          <div class="polaroid-frame hero-polaroid tilt-left">
+            <div class="washi-tape"></div>
+            <img src="img_mirror_hug.jpeg" alt="Our sweet hug together" class="polaroid-img hero-img">
+            <div class="polaroid-caption">In your arms is where I always belong... 🤍</div>
+          </div>
+          <div class="side-sticker">
+            <img src="assets/gifs/crying-dudu3.gif" alt="Crying little bear" class="micro-gif">
+          </div>
+        </div>
+
+        <div class="text-content apology-box">
+          <h2 class="section-title">Akhu, I am so truly sorry...</h2>
+          <div class="typewriter-container">
+            <p class="apology-sentence-highlight">
+              "The harsh things I said earlier, and the way I spoke to you and scolded you... is <strong>never</strong> the way I ever wanted to treat you."
+            </p>
+            <p class="apology-body-text">
+              The moment those words left my mouth, my own heart broke. You are so gentle, so special to me, and you never deserved my anger. Seeing you hurt because of me kills me inside.
+            </p>
+          </div>
+        </div>
+
+        <!-- Forward-only action button (No back button per request) -->
+        <div class="action-area">
+          <button class="btn-primary btn-full-width" id="btn-next-1">
+            <span>There's something I won't ever forget... 💌</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 3: BUN BUN & SUGAR PUFF (FULL COVER PHOTOS & FLOATING LOVE ANIMATION) ================= -->
+      <section class="card-scene" id="scene-2" data-scene="2">
+        <!-- Full Card Cover Automatic Crossfade Slideshow (No clicking needed) -->
+        <div class="chapter2-bg-slideshow" id="chapter2-bg-slideshow" aria-hidden="true">
+          <div class="c2-slide active" style="background-image: url('img_holding_hands.jpeg');"></div>
+          <div class="c2-slide" style="background-image: url('img_hug_window.jpeg');"></div>
+          <div class="c2-slide" style="background-image: url('img_hands_lap.jpeg');"></div>
+          <div class="c2-scrim-gradient"></div>
+        </div>
+
+        <div class="scene-pill scene-pill-c2">
+          <span class="pill-dot"></span>
+          <span>Chapter 2 • How Much I Adore You 🌸</span>
+        </div>
+
+        <!-- Floating Animated Love Feelings (No dull box, no sliding dots, proper animated) -->
+        <div class="floating-love-message-area">
+          <h2 class="floating-section-title">I won't ever forget... 💖</h2>
+          
+          <div class="floating-love-reel" id="floating-love-reel">
+            <div class="floating-love-item active" id="floating-love-item">
+              <div class="floating-badge-wrap">
+                <span class="floating-love-badge" id="floating-love-badge">🐰 My Sweet Little Bun Bun</span>
+              </div>
+              <p class="floating-love-text" id="floating-love-text">
+                You are the softest, purest love in my entire life. My world is only colorful when you smile.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Forward-only button -->
+        <div class="action-area action-area-c2">
+          <button class="btn-primary btn-full-width" id="btn-next-2">
+            <span>Can you forgive your idiot? 🥺❤️</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 4: WILL YOU FORGIVE ME? (PLAYFUL GAME & SWEET READABLE CELEBRATION) ================= -->
+      <section class="card-scene" id="scene-3" data-scene="3">
+        <div class="scene-pill">
+          <span class="pill-dot"></span>
+          <span>Chapter 3 • Please Say Yes 🥺</span>
+        </div>
+
+        <!-- Normal State: Asking for forgiveness -->
+        <div class="forgive-normal-view" id="forgive-normal-view">
+          <div class="character-wrapper forgive-char-box">
+            <div class="gif-container">
+              <img src="assets/gifs/sad0.gif" alt="Pleading cute face" class="character-gif" id="forgive-gif">
+            </div>
+          </div>
+
+          <div class="text-content">
+            <h2 class="forgive-question" id="forgive-title">Akhu... do you forgive me? 🥺</h2>
+            <p class="forgive-prompt" id="forgive-subtitle">
+              I promise unlimited cuddles, sweet treats, and to never speak to you harshly ever again!
+            </p>
+          </div>
+
+          <!-- The Interactive Yes & Runaway No Buttons -->
+          <div class="forgive-buttons-area" id="forgive-buttons-area">
+            <button class="btn-forgive-yes" id="btn-forgive-yes">
+              <span class="btn-heart">❤️</span>
+              <span class="yes-text">Yes, I forgive you! 🥰</span>
+              <span class="btn-heart">❤️</span>
+            </button>
+            <button class="btn-forgive-no" id="btn-forgive-no">
+              No 😤
+            </button>
+          </div>
+        </div>
+
+        <!-- Sweet, Sincere Celebration State: Simple, touching, readable -->
+        <div class="forgive-celebration-view" id="forgive-celebration-view" style="display: none;">
+          <div class="character-wrapper">
+            <div class="gif-container heart-pulse">
+              <img src="assets/gifs/happy1.gif" alt="Bubu and dudu hugging happily" class="character-gif">
+            </div>
+          </div>
+          <div class="text-content celebration-content">
+            <h2 class="celebration-title">Thank you, my love... ❤️</h2>
+            <p class="celebration-subtitle">
+              Your forgiveness means the entire world to me. I promise to always cherish my sweet little bun bun and hold you with only tenderness.
+            </p>
+            <div class="celebration-timer-badge" id="celebration-timer-badge">
+              <span>For my precious Akhu... 💕</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SCENE 5: THE GRAND FINALE & SPECIAL FINAL IMAGE ================= -->
+      <section class="card-scene" id="scene-4" data-scene="4">
+        <div class="scene-pill celebration-pill">
+          <span class="pill-heart">💖</span>
+          <span>Forever & Always My Akhu 💍</span>
+        </div>
+
+        <!-- Large Centerpiece Final Polaroid with Anti-Clockwise Upright Selfie! -->
+        <div class="final-polaroid-container hero-final-container">
+          <div class="final-polaroid-frame hero-final-frame" id="final-polaroid">
+            <div class="golden-clip">📌</div>
+            <div class="final-img-wrapper hero-final-wrapper">
+              <!-- Using the properly oriented anti-clockwise upright selfie -->
+              <img src="img_selfie_upright.jpeg" alt="Akhu and me smiling together" class="final-img active" id="final-img-main">
+              <img src="img_kiss_window.jpeg" alt="Sweet kiss by the window" class="final-img" id="final-img-kiss">
+              <div class="final-img-overlay-badge" id="photo-flip-btn" title="Tap to switch to our sweet kiss photo!">
+                <span class="badge-icon">💋</span>
+                <span class="badge-text" id="photo-flip-text">Tap for our sweet kiss</span>
+              </div>
+            </div>
+            <div class="final-caption">
+              <span>Akhu & Me ❤️</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-content final-love-letter">
+          <h2 class="final-heading">Thank you, my sweet little bun bun! 🥺💖</h2>
+          <p class="final-vow">
+            "I promise to always hold your hand with love, to protect your smile, and to speak to my sugar puff with only tenderness, respect, and infinite warmth. You are my whole universe, Akhu."
+          </p>
+        </div>
+
+        <!-- Cute interactive actions for her -->
+        <div class="action-area final-actions">
+          <div class="interactive-reaction-row">
+            <button class="btn-reaction" id="btn-hug" title="Send a virtual hug">
+              <span>🤗</span> Virtual Hug
+            </button>
+            <button class="btn-reaction" id="btn-rain-love" title="Shower of hearts">
+              <span>💖</span> Rain Hearts
+            </button>
+            <button class="btn-reaction" id="btn-restart" title="Replay our story">
+              <span>🔄</span> Replay
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Virtual Hug Fullscreen Overlay -->
+  <div class="hug-modal-overlay" id="hug-modal" aria-hidden="true">
+    <div class="hug-modal-card">
+      <div class="hug-gif-wrap">
+        <img src="assets/gifs/happy2.gif" alt="Warm tight hug" class="hug-modal-gif">
+      </div>
+      <h3 class="hug-modal-title">Sending You The Biggest, Warmest Hug! 🫂❤️</h3>
+      <p class="hug-modal-text">Holding my sweet little bun bun Akhu close to my heart... never letting you go.</p>
+      <button class="btn-primary" id="btn-close-hug">Hold Tight Forever 🥰</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
